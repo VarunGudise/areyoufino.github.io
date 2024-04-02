@@ -41,7 +41,7 @@ function createProductPage(productName, productPrice, imageUrl) {
           <input type="text" id="name" name="name" placeholder="Name" required="" />
           <label for="email">Email</label>
           <input type="text" id="product" name="product-name" placeholder="${productName}" required="" />
-          <button type="submit">Send</button>
+          <button type="submit">CONFIRM PREORDER</button>
         </form>
         // <form action="https://formsubmit.co/areyoufino@gmail.com" method="POST">
             
