@@ -29,7 +29,7 @@ function createProductPage(productName, productPrice, imageUrl) {
             <a class="et-hero-tab" href="NEW.html">NEW</a>
             <a class="et-hero-tab" href="SHOP.html">SHOP</a>
             <a class="et-hero-tab" id='fino' href="index.html"><img src="FINO-LOGO.png" alt=""></a>
-            <a class="et-hero-tab" href="CONTACT.html">CONTACT</a>
+            <a class="et-hero-tab" href="INFO.html">INFO</a>
             <a class="et-hero-tab" href="MEDIA.html">MEDIA</a>
         </div>
       </section>
@@ -37,7 +37,7 @@ function createProductPage(productName, productPrice, imageUrl) {
           <div class="et-hero-tabs-container-mobile">
             <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
             <a class="et-hero-tab" id = 'mobile' href="SHOP.html">SHOP</a>
-            <a class="et-hero-tab" id='mobile' href="CONTACT.html">CONTACT</a>
+            <a class="et-hero-tab" id='mobile' href="INFO.html">INFO</a>
             <a class="et-hero-tab" id="mobile" href="MEDIA.html">MEDIA</a>
           </div>
         </div>
