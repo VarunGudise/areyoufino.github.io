@@ -36,13 +36,14 @@ function createProductPage(productName, productPrice, imageUrl) {
             <p>${productPrice}</p>
     </div>
     <div class="container1">
-        <form action="https://formsubmit.co/areyoufino@gmail.com" method="POST">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d3420cad-9b9e-4609-87ae-ba6838d39c44">
 
-        <label for="fname">Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <p>your item: ${productName}</p>
-        <input type="text" name="email" placeholder='RE-ENTER PRODUCT WITH SIZE' required>
-        <input type="submit" value="CONFIRM PREORDER">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <p>your item: ${productName}</p>
+            <input type="text" name="email" placeholder='RE-ENTER PRODUCT WITH SIZE' required>
+            <input type="submit" value="CONFIRM PREORDER">
 
          </form>
     </div>
