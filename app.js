@@ -36,11 +36,13 @@ function createProductPage(productName, productPrice, imageUrl) {
             <p>${productPrice}</p>
     </div>
     <div class="container1">
-        <form action="https://formsubmit.co/areyoufino@gmail.com" method="POST">
+        <form action="https://formsubmit.co/areyoufino@email.com" method="POST">
+            
 
             <label for="fname">Name</label>
             <input type="text" id="fname" name="firstname" placeholder="Your name..">
             <p>your item: ${productName}</p>
+            <input type='email' name='email' placeholder = 'ENTER EMAIL'>
             <input type="text" name="email" placeholder='RE-ENTER PRODUCT WITH SIZE' required>
             <input type="submit" value="CONFIRM PREORDER">
 
