@@ -16,15 +16,31 @@ function createProductPage(productName, productPrice, imageUrl) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+      <nav class="ham">
+        <div class="ham-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+        </div>
+      </nav>
+
       <section class="et-hero-tabs">
         <div class="et-hero-tabs-container">
-          <a class="et-hero-tab" href="NEW.html">NEW</a>
-          <a class="et-hero-tab" href="SHOP.html">SHOP</a>
-          <a class="et-hero-tab" id='fino' href="index.html"><img src="FINO-LOGO.png" alt=""></a>
-          <a class="et-hero-tab" href="CONTACT.html">CONTACT</a>
-          <a class="et-hero-tab" href="MEDIA.html">MEDIA</a>
+            <a class="et-hero-tab" href="NEW.html">NEW</a>
+            <a class="et-hero-tab" href="SHOP.html">SHOP</a>
+            <a class="et-hero-tab" id='fino' href="index.html"><img src="FINO-LOGO.png" alt=""></a>
+            <a class="et-hero-tab" href="CONTACT.html">CONTACT</a>
+            <a class="et-hero-tab" href="MEDIA.html">MEDIA</a>
         </div>
-    </section>
+      </section>
+        <div class="off-screen-menu">
+          <div class="et-hero-tabs-container-mobile">
+            <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
+            <a class="et-hero-tab" id = 'mobile' href="SHOP.html">SHOP</a>
+            <a class="et-hero-tab" id='mobile' href="CONTACT.html">CONTACT</a>
+            <a class="et-hero-tab" id="mobile" href="MEDIA.html">MEDIA</a>
+          </div>
+        </div>
     <div class="placeholder"></div>
     <div class='fade-in'>
     <div class="Title">
@@ -45,7 +61,7 @@ function createProductPage(productName, productPrice, imageUrl) {
 
     </div>
     </div>
-      
+      <script src='script.js'></script>
     </body>
     </html>
     `;
