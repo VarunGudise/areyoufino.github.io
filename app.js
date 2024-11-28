@@ -16,31 +16,27 @@ function createProductPage(productName, productPrice, imageUrl) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-      <nav class="ham">
-        <div class="ham-menu">
-              <span></span>
-              <span></span>
-              <span></span>
-        </div>
-      </nav>
+    <div class="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
 
-      <section class="et-hero-tabs">
-        <div class="et-hero-tabs-container">
-            <a class="et-hero-tab" href="NEW.html">NEW</a>
-            <a class="et-hero-tab" href="SHOP.html">SHOP</a>
-            <a class="et-hero-tab" id='fino' href="index.html"><img src="FINO-LOGO.png" alt=""></a>
-            <a class="et-hero-tab" href="INFO.html">INFO</a>
-            <a class="et-hero-tab" href="MEDIA.html">MEDIA</a>
-        </div>
-      </section>
-        <div class="off-screen-menu">
-          <div class="et-hero-tabs-container-mobile">
-            <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
-            <a class="et-hero-tab" id = 'mobile' href="SHOP.html">SHOP</a>
-            <a class="et-hero-tab" id='mobile' href="INFO.html">INFO</a>
-            <a class="et-hero-tab" id="mobile" href="MEDIA.html">MEDIA</a>
-          </div>
-        </div>
+  <section class="et-hero-tabs">
+    <div class="et-hero-tabs-container">
+            <a href="index.html" class="et-hero-tab" id="fino"><img src="Images/FINO-LOGO.png" alt=""></a>
+    </div>
+  </section>
+  <div class="off-screen-menu">
+    <div class="et-hero-tabs-container-mobile">
+      <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
+      <a class="et-hero-tab" id = 'mobile' href="SHOP.html">SHOP</a>
+      <a class="et-hero-tab" id='mobile' href="CONTACT.html">ABOUT</a>
+      <a class="et-hero-tab" id="mobile" href="MEDIA.html">MEDIA</a>
+
+    </div>
+  </div>
     <div class="placeholder"></div>
     <div class='fade-in'>
     <div class="Title">
@@ -52,13 +48,14 @@ function createProductPage(productName, productPrice, imageUrl) {
             <p>${productPrice}</p>
     </div>
     <div class="container1">
-        <form action="https://submit-form.com/bXD4OzkBK">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Full Name" required />
-          <input type="text" id="product" name="product-name" placeholder="RETYPE: ${productName}" required/>
-          <button type="submit">CONFIRM PREORDER</button>
-        </form>
-
+      <form action="https://submit-form.com/bXD4OzkBK">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Full Name" required />
+        <select id="country" name="country" required>
+          <option value="${productName}">${productName}</option>
+        </select>
+        <button type="submit">CONFIRM PREORDER</button>
+      </form>
     </div>
     </div>
       <script src='script.js'></script>
