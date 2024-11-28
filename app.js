@@ -51,7 +51,7 @@ function createProductPage(productName, productPrice, imageUrl) {
       <form action="https://submit-form.com/bXD4OzkBK">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Full Name" required />
-        <select id="country" name="country" required>
+        <select id="clothes" name="clothes" required>
           <option value="${productName}">${productName}</option>
         </select>
         <button type="submit">CONFIRM PREORDER</button>
