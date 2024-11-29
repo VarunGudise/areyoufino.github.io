@@ -12,7 +12,7 @@ function createProductPage(productName, productPrice, imageUrl) {
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-      <link rel="shortcut icon" type="x-icon" href="Fino-Icon.png">
+      <link rel="shortcut icon" type="x-icon" href="Images/Fino-F.png">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
