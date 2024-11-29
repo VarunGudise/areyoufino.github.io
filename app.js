@@ -54,6 +54,12 @@ function createProductPage(productName, productPrice, imageUrl) {
         <select id="clothes" name="clothes" required>
           <option value="${productName}">${productName}</option>
         </select>
+        <select id="size" name="size">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
         <button type="submit">CONFIRM PREORDER</button>
       </form>
     </div>
