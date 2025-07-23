@@ -1,7 +1,9 @@
+/* Import Archivo Black from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 * {
-    /* font-family: 'Archivo Black'; */
-    /* font-family: Helvetica, Arial, sans-serif; */
-    font-family: 'Helvetica neue', Arial, Helvetica, sans-serif;
+    font-family: 'Archivo Black', 'Helvetica neue', Arial, Helvetica, sans-serif;
+
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -60,17 +62,17 @@ a {
     padding: 17px;
     display: flex;
     flex-direction: row;
-    position: absolute;
     top: 0;
     width: 80%;
-    margin-right: 10%;
-    margin-left: 4%;
-    height: 70px;
+
+
+    height: 90px;
     z-index: 10;
-    &--top {
+    /* &--top {
         position: fixed;
         top: 0;
-    }
+    } */
+    text-align: right;
     background-color: transparent;
 
 }
@@ -78,7 +80,7 @@ a {
 
 .et-hero-tab {
     display: flex;
-    padding: 3px;
+
     /* justify-content: center; */
     /* align-items: center; */
     flex: 1;
@@ -90,6 +92,7 @@ a {
     z-index: 999;
     /* border-radius: 50px; */
     transition: 0.5s;
+
 }
 /* .et-hero-tab:hover {
     transition: ease-in-out 0.2s;
@@ -100,10 +103,12 @@ a {
 
 
 #fino {
-    margin-top: 8px;
-    height: 50px;
 
-    overflow-y: hidden;
+    margin-top: 3px;
+    height: 100%;
+
+
+
 }
 .placeholder {
     height: 100px;
@@ -289,11 +294,11 @@ a {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 5%;
+    /* padding-top: 5%;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 5%;
-    height: 700px;
+    padding-bottom: 5%; */
+    height: 900px;
     overflow-y: hidden;
 }
 #horizontal{
@@ -328,9 +333,10 @@ a {
     flex-direction: column;
     opacity: 0;
     transition: 0.5s;
+
 }
 .homepage-wrapper-content h1 {
-    font-size: 35px;
+    font-size: 85px;
     color: white;
     margin-bottom: 10px;
 }
@@ -478,6 +484,7 @@ input[type=text], select, textarea {
 }
 
 
+
 .off-screen-menu {
     padding-top: 60px;
     background-color: #f1f1f1;
@@ -488,8 +495,8 @@ input[type=text], select, textarea {
     top: 0;
     left: -450px;
     display: flex;
-    flex-direction: column;
     text-align: center;
+    flex-direction: column;
     font-size: 3rem;
     transition: 0.3s ease;
     z-index: 10;
@@ -497,9 +504,11 @@ input[type=text], select, textarea {
 #mobile {
     margin-bottom: 10px;
     width: 50%;
+    padding: 2%;
+
     margin-left: 30%;
-    font-weight: bold;
     font-size: 1.5rem;
+
 
 }
 .off-screen-menu.active {
