@@ -294,6 +294,10 @@ a {
     height: 900px;
     overflow-y: hidden;
 }
+.homepage-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
 #horizontal{
     object-fit: cover;
 }
