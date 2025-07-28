@@ -525,7 +525,7 @@ input[type=text], select, textarea {
 }
 .fino-nav {
     z-index: 15;
-    right: 1%;
+    right: 50%;
     position: fixed;
     top: 2.5%;
 
@@ -695,4 +695,12 @@ input[type=text], select, textarea {
     margin-top: 30px;
     width: 70px;
     height: auto;
+}
+.updates {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+.placeholder2 {
+    height: 400px;
+    background-color: #f1f1f1;
 }
