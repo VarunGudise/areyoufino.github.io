@@ -3,31 +3,33 @@ function createProductPage(productName, productPrice, imageUrl) {
     // Create a new HTML page dynamically
     const newPageContent = `
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" type="text/css" href="style.css" /> 
-      <title>FINO - PRODUCT</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-      <link rel="shortcut icon" type="x-icon" href="Images/Fino-F.png">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" /> 
+  <title>FINO - HOME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="x-icon" href="Images/finobubble.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <nav class="ham">
     <div class="ham-menu">
       <span></span>
       <span></span>
       <span></span>
     </div>
+    <a href="index.html"  class="fino-nav"><img src="Images/finobubble.png" alt=""></a>
   </nav>
-
   <section class="et-hero-tabs">
     <div class="et-hero-tabs-container">
-            <a href="index.html" class="et-hero-tab" id="fino"><img src="Images/FINO-LOGO.png" alt=""></a>
+
     </div>
   </section>
+
   <div class="off-screen-menu">
     <div class="et-hero-tabs-container-mobile">
       <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
@@ -37,7 +39,7 @@ function createProductPage(productName, productPrice, imageUrl) {
 
     </div>
   </div>
-    <div class="placeholder"></div>
+
     <div class='fade-in'>
     <div class="Title">
       <h1>PRODUCT INFO</h1>
@@ -55,18 +57,19 @@ function createProductPage(productName, productPrice, imageUrl) {
           <option value="${productName}">${productName}</option>
         </select>
         <select id="size" name="size">
-          <option value="XS">XS</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-        </select>
-        <button type="submit">CONFIRM PREORDER</button>
+           <option value="XS">XS</option>
+           <option value="S">S</option>
+           <option value="M">M</option>
+           <option value="L">L</option>
+         </select> 
+        <button type="submit">CONFIRM ORDER</button>
       </form>
     </div>
     </div>
       <script src='script.js'></script>
     </body>
-    </html>
+</html>
+
     `;
   
     // Create a new window with the generated content
