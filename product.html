@@ -20,29 +20,62 @@
     </div>
     <a href="index.html"  class="fino-nav"><img src="Images/finobubble.png" alt=""></a>
   </nav>
-    <section class="et-hero-tabs">
-        <div class="et-hero-tabs-container">
+  <section class="et-hero-tabs">
+    <div class="et-hero-tabs-container">
 
-        </div>
-    </section>
-
-
+    </div>
   </section>
+
   <div class="off-screen-menu">
     <div class="et-hero-tabs-container-mobile">
       <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
       <a class="et-hero-tab" id = 'mobile' href="SHOP.html">SHOP</a>
       <a class="et-hero-tab" id='mobile' href="CONTACT.html">ABOUT</a>
-      <a class="et-hero-tab" id="mobile" href="MEDIA.html">GALLERY</a>
+      <a class="et-hero-tab" id="mobile" href="MEDIA.html">MEDIA</a>
 
     </div>
   </div>
 
+    <div class='fade-in'>
+    <div class="Title">
+      <h1>PRODUCT INFO</h1>
+    </div>
+    
+    <div class="product">
+            <img src="${imageUrl}" alt="${productName}">
+            <h2>${productName}</h2>
+            <p>${productPrice}</p>
+    </div>
+    <div class="story">
+        <div class="story-paragraph">
+            <div class="story-header">
+                <p>pronoia tees: one size fits all</p>
 
+                <p>areyoufino@gmail.com</p>
 
+            </div>
+        </div>
+        <!-- <img class='story-image' src="Clothes/Green-shirt-grass.jpg" alt=""> -->
 
-
-
-  <script src="script.js"></script>
-</body>
+    </div>
+    <div class="container1">
+      <form action="https://submit-form.com/bXD4OzkBK">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Full Name" required />
+        <select id="clothes" name="clothes" required>
+          <option value="${productName}">${productName}</option>
+        </select>
+         <select id="size" name="size">
+           <option value="XS">XS</option>
+           <option value="S">S</option>
+           <option value="M">M</option>
+           <option value="L">L</option>
+         </select>
+        <button type="submit">CONFIRM ORDER</button>
+      </form>
+    </div>
+    
+    </div>
+      <script src='script.js'></script>
+    </body>
 </html>
