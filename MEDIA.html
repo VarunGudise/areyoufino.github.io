@@ -3,135 +3,512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" /> 
     <title>FINO - HOME</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="x-icon" href="Images/finobubble.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Import Archivo Black from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+        * {
+            font-family: 'Archivo Black', 'Helvetica neue', Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scroll on entire page */
+        }
+
+        body {
+            flex-direction: column;
+            background-color: #fff;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .et-hero-tabs {
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            text-align: center;
+            z-index: 10;
+            background-color: #fff;
+        }
+
+        .et-hero-tab img {
+            height: 80%;
+            width: auto;
+        }
+
+        .et-hero-tabs-container {
+            overflow-y: hidden;
+            padding: 17px;
+            display: flex;
+            flex-direction: row;
+            top: 0;
+            width: 80%;
+            height: 90px;
+            z-index: 10;
+            text-align: right;
+            background-color: transparent;
+        }
+
+        .et-hero-tab {
+            display: flex;
+            flex: 1;
+            color: #000;
+            background-color: #fff;
+            letter-spacing: 0.1rem;
+            font-size: 1.4rem;
+            z-index: 999;
+            transition: 0.5s;
+        }
+
+        .placeholder {
+            height: 100px;
+            width: 100%;
+        }
+
+        .fino-images {
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .fino-images > * {
+            transform: translateY(0px);
+            transition: transform 0.6s;
+        }
+
+        .fino-images:hover > * {
+            transform: translateY(-10px);
+        }
+
+        .fino-images img {
+            height: 140px;
+            width: 140px;
+            margin: 3em 0.5em 3em 0.5em;
+        }
+
+        .Title {
+            height: auto;
+            min-height: 80px;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            overflow-y: visible;
+            padding: 30px 20px 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Title h1 {
+            margin: 0;
+            letter-spacing: 0.1rem;
+            font-size: 4vw;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .Title p {
+            margin: 20px;
+            letter-spacing: 0.1rem;
+            font-size: 1.5vw;
+        }
+
+        /* FIXED GALLERY STYLES */
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            width: 100%;
+            max-width: 100vw; /* Prevent overflow */
+            margin: 40px 0; /* Remove horizontal margin */
+            padding: 0 20px; /* Add padding instead */
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        .box {
+            display: flex;
+            width: 100%;
+            max-width: 1200px; /* Set max width */
+            gap: 20px; /* Use gap instead of margins for better control */
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            width: 33.333%; /* Equal width columns */
+            min-width: 0; /* Allow columns to shrink */
+        }
+
+        .column img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            object-fit: cover;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .column img:hover {
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        .footer {
+            overflow-y: hidden;
+            text-align: center;
+            align-items: center;
+            padding: 15px;
+            width: 100%;
+            height: 100px;
+            background-color: #fff;
+        }
+
+        .footer-header {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .footer p {
+            font-size: 10px;
+        }
+
+        .fa {
+            text-decoration: none;
+            color: black;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        /* MOBILE MENU STYLES */
+        .ham-menu {
+            padding: 30px;
+        }
+
+        .off-screen-menu {
+            padding-top: 60px;
+            background-color: #f1f1f1;
+            height: 100vh;
+            width: 100%;
+            max-width: 300px;
+            position: fixed;
+            top: 0;
+            left: -450px;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            font-size: 3rem;
+            transition: 0.3s ease;
+            z-index: 10;
+        }
+
+        #mobile {
+            margin-bottom: 10px;
+            width: 50%;
+            padding: 2%;
+            margin-left: 30%;
+            font-size: 1.5rem;
+        }
+
+        .off-screen-menu.active {
+            left: 0;
+        }
+
+        .nav {
+            padding: 20px;
+            display: flex;
+            background-color: #fff;
+            z-index: 1000;
+        }
+
+        .ham {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .fino-nav {
+            z-index: 15;
+            right: 50%;
+            position: fixed;
+            top: 2.5%;
+            height: 50px;
+            width: 50px;
+        }
+
+        .fino-nav img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .ham-menu {
+            height: 50px;
+            width: 50px;
+            position: fixed;
+            left: 1%;
+            top: 1.5%;
+            z-index: 999;
+        }
+
+        .ham-menu span {
+            height: 5px;
+            width: 80%;
+            background-color: #000;
+            border-radius: 25px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.3s ease;
+            z-index: 999;
+        }
+
+        .ham-menu span:nth-child(1) {
+            top: 25%;
+            z-index: 999;
+        }
+
+        .ham-menu span:nth-child(2) {
+            top: 75%;
+            z-index: 999;
+        }
+
+        .ham-menu.active span:nth-child(1) {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            z-index: 999;
+        }
+
+        .ham-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .ham-menu.active span:nth-child(3) {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            z-index: 999;
+        }
+
+        /* Add top margin to first title only */
+        .fade-in .Title:first-of-type {
+            margin-top: 100px;
+            min-height: 50px;
+            padding: 15px 20px 15px 20px;
+        }
+        @media (max-width: 920px) {
+            .Title h1 {
+                font-size: 6vw; /* Larger on mobile for better readability */
+                margin: 30px 15px;
+            }
+
+            .gallery {
+                padding: 0 15px; /* Reduce padding on mobile */
+                margin: 20px 0;
+            }
+
+            .box {
+                flex-direction: column; /* Stack columns vertically on mobile */
+                gap: 15px;
+            }
+
+            .column {
+                width: 100%; /* Full width on mobile */
+                margin: 0;
+            }
+
+            .column img {
+                margin-bottom: 10px;
+            }
+
+            .ham {
+                display: block;
+            }
+
+            .et-hero-tab {
+                display: none;
+            }
+
+            #mobile {
+                display: block;
+            }
+
+            #fino {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .Title {
+                padding: 15px 10px 10px 10px;
+                min-height: 50px;
+            }
+
+            .Title h1 {
+                font-size: 8vw;
+            }
+
+            .fade-in .Title:first-of-type {
+                margin-top: 80px;
+            }
+
+            .gallery {
+                padding: 0 10px;
+                margin: 15px 0;
+            }
+
+            .footer p {
+                font-size: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="ham">
         <div class="ham-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <a href="index.html"  class="fino-nav"><img src="Images/finobubble.png" alt=""></a>
-      </nav>
-    
-      <section class="et-hero-tabs">
+        <a href="index.html" class="fino-nav"><img src="Images/finobubble.png" alt=""></a>
+    </nav>
+
+    <section class="et-hero-tabs">
         <div class="et-hero-tabs-container">
         </div>
-      </section>
-      <div class="off-screen-menu">
+    </section>
+    
+    <div class="off-screen-menu">
         <div class="et-hero-tabs-container-mobile">
-          <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
-          <a class="et-hero-tab" id = 'mobile' href="SHOP.html">SHOP</a>
-          <a class="et-hero-tab" id='mobile' href="INFO.html">ABOUT</a>
-          <a class="et-hero-tab" id="mobile" href="MEDIA.html">GALLERY</a>
-
-        </div>
-      </div>
-    <div class="fade-in">
-    <div class="Title">
-        <h1>SEASON 3 - pronoia</h1>
-    </div>
-    <div class="gallery">
-        
-        <div class="box">
-            
-            <div class="column">
-                <img src="Images/Szn3/building.jpg" alt="Product">
-                <img src="Images/Szn3/adamCHAR.jpeg" alt="Product">
-
-
-            </div>
-            <div class="column">
-                <img src="Images/Szn3/adamCHAR2.jpeg" alt="Product">
-                <img src="Images/Szn3/homepage3.JPG" alt="Product">
-
-                
-            </div>
-            <div class="column">
-                <img src="Images/Szn3/skyline.jpg" alt="Product">
-                <img src="Images/Szn3/jmsnSLAG.jpeg" alt="">
-            </div>
+            <a class="et-hero-tab" id="mobile" href="NEW.html">NEW</a>
+            <a class="et-hero-tab" id='mobile' href="SHOP.html">SHOP</a>
+            <a class="et-hero-tab" id='mobile' href="INFO.html">ABOUT</a>
+            <a class="et-hero-tab" id="mobile" href="MEDIA.html">GALLERY</a>
         </div>
     </div>
     
-    <div class="Title">
-        <h1>SEASON 2 - gentle currents</h1>
-    </div>
-    <div class="gallery">
+    <div class="fade-in">
+        <div class="Title">
+            <h1>SEASON 3 - pronoia</h1>
+        </div>
+        <div class="gallery">
+            <div class="box">
+                <div class="column">
+                    <img src="Images/Szn3/building.jpg" alt="Product">
+                    <img src="Images/Szn3/adamCHAR.jpeg" alt="Product">
+                </div>
+                <div class="column">
+                    <img src="Images/Szn3/adamCHAR2.jpeg" alt="Product">
+                    <img src="Images/Szn3/homepage3.JPG" alt="Product">
+                </div>
+                <div class="column">
+                    <img src="Images/Szn3/skyline.jpg" alt="Product">
+                    <img src="Images/Szn3/jmsnSLAG.jpeg" alt="">
+                </div>
+            </div>
+        </div>
         
-        <div class="box">
-            
-            <div class="column">
-                <img src="Images/Szn2/2Season2.jpeg" alt="Product">
-                <img src="Images/Szn2/leaves.jpeg" alt="Product">
-             
-                <img src="Images/Szn2/bunnyhopRR.jpeg" alt="Product">
-
-
-            </div>
-            <div class="column">
-                <img src="Images/Szn2/flowerz2.jpg" alt="Product">
-                <img src="Clothes/PSBACK.jpeg" alt="Product">
-                <img src="Images/Szn2/milktee.jpeg" alt="Product">
-
-                
-            </div>
-            <div class="column">
-                <img src="Images/Szn2/Pinszn2.jpeg" alt="Product">
-                <img src="Images/Szn2/Model1.jpeg" alt="Product">
-                <img src="Images/Szn2/Season2.jpeg" alt="Product">
-
+        <div class="Title">
+            <h1>SEASON 2 - gentle currents</h1>
+        </div>
+        <div class="gallery">
+            <div class="box">
+                <div class="column">
+                    <img src="Images/Szn2/2Season2.jpeg" alt="Product">
+                    <img src="Images/Szn2/leaves.jpeg" alt="Product">
+                    <img src="Images/Szn2/bunnyhopRR.jpeg" alt="Product">
+                </div>
+                <div class="column">
+                    <img src="Images/Szn2/flowerz2.jpg" alt="Product">
+                    <img src="Clothes/PSBACK.jpeg" alt="Product">
+                    <img src="Images/Szn2/milktee.jpeg" alt="Product">
+                </div>
+                <div class="column">
+                    <img src="Images/Szn2/Pinszn2.jpeg" alt="Product">
+                    <img src="Images/Szn2/Model1.jpeg" alt="Product">
+                    <img src="Images/Szn2/Season2.jpeg" alt="Product">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="Title">
-        <h1>SEASON 1 - the unstrangers + inanimate</h1>
-    </div>
-    <div class="gallery">
         
-        <div class="box">
-            
-            <div class="column">
-                <img src="Images/Homepage-Image2.png" alt="">
-                <img src="Images/Media2.JPG" alt="">
-                <img src="Images/Media6.jpeg" alt="">
-                <img src="Images/Media10.JPG" alt="">
-            </div>
-            <div class="column">
-                <img src="Images/FINO.jpg" alt="">
-                <img src="Images/Media1.jpg" alt="">
-                <img src="Images/Media7.jpeg" alt="">
-                <img src="Images/Fino-O.jpg" alt="">
-                <img src="Images/Media11.JPG" alt="">
-                
-            </div>
-            <div class="column">
-                <img src="Images/Media3.jpeg" alt="">
-                <img src="Images/Media9.JPG" alt="">
-                <img src="Images/Media4.jpeg" alt="">
-                <img src="Images/Homepage-Image.JPG" alt="">
+        <div class="Title">
+            <h1>SEASON 1 - the unstrangers + inanimate</h1>
+        </div>
+        <div class="gallery">
+            <div class="box">
+                <div class="column">
+                    <img src="Images/Homepage-Image2.png" alt="">
+                    <img src="Images/Media2.JPG" alt="">
+                    <img src="Images/Media6.jpeg" alt="">
+                    <img src="Images/Media10.JPG" alt="">
+                </div>
+                <div class="column">
+                    <img src="Images/FINO.jpg" alt="">
+                    <img src="Images/Media1.jpg" alt="">
+                    <img src="Images/Media7.jpeg" alt="">
+                    <img src="Images/Fino-O.jpg" alt="">
+                    <img src="Images/Media11.JPG" alt="">
+                </div>
+                <div class="column">
+                    <img src="Images/Media3.jpeg" alt="">
+                    <img src="Images/Media9.JPG" alt="">
+                    <img src="Images/Media4.jpeg" alt="">
+                    <img src="Images/Homepage-Image.JPG" alt="">
+                </div>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="icons">
+                <a href="https://www.instagram.com/areyoufino?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="fa fa-instagram"></a>
+            </div>
+            <p>based in dublin, ca</p>
+            <p>DESIGNED, CREATED, AND PUT TOGETHER BY RIELY RUFINO</p>
+            <p>DEVELOPED BY VARUN GUDISE</p>
+        </footer>
     </div>
+    
+    <script>
+        // Mobile menu functionality
+        const hamMenu = document.querySelector('.ham-menu');
+        const offScreenMenu = document.querySelector('.off-screen-menu');
 
-
-
-    <footer class="footer">
-        <div class="icons">
-            <a href="https://www.instagram.com/areyoufino?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="fa fa-instagram"></a>
-        </div>
-        <p>based in dublin, ca</p>
-        <p>DESIGNED, CREATED, AND PUT TOGETHER BY RIELY RUFINO</p>
-        <p>DEVELOPED BY VARUN GUDISE</p>
-    </footer>
-    </div>
-    <script src="script.js"></script>
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
