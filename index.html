@@ -24,12 +24,40 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            min-height: calc(100vh - 100px); /* Adjust based on your nav height */
+            min-height: 100vh;
         }
         
         .main-content {
             flex: 1;
             padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .goodbye-text {
+            max-width: 700px;
+            text-align: center;
+            color: #fff;
+            font-family: 'Archivo Black', sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .goodbye-text p {
+            margin: 0;
+            font-size: 1.4rem;
+            line-height: 1.5;
+        }
+
+        .goodbye-text p:first-child {
+            font-size: 2.2rem;
+        }
+
+        .goodbye-text a {
+            color: #fff;
+            text-decoration: underline;
         }
         
         .footer {
@@ -38,34 +66,16 @@
     </style>
 </head>
 <body>
-    
-    <nav class="ham">
-        <div class="ham-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <a href="index.html" class="fino-nav"><img src="Images/finobubble.png" alt=""></a>
-    </nav>
-    
-    <section class="et-hero-tabs">
-        <div class="et-hero-tabs-container">
-        </div>
-    </section>
 
-    <div class="off-screen-menu">
-        <div class="et-hero-tabs-container-mobile">
-          <a class="et-hero-tab" id='mobile' href="SHOP.html">SHOP</a>
-          <a class="et-hero-tab" id='mobile' href="INFO.html">ABOUT</a>
-          <a class="et-hero-tab" id="mobile" href="MEDIA.html">GALLERY</a>
-        </div>
-    </div>
-    
     <div class="fade-in">
         <div class="title"></div>
         
         <div class="main-content">
-            <!-- Your main content goes here -->
+            <div class="goodbye-text">
+                <p>&ldquo;forever.&rdquo;</p>
+                <p>&ldquo;thank you for two years of FIN&Oslash;. thank you for letting me practice in front of you.&rdquo;</p>
+                <p>&ldquo;for more creative work, go to <a href="https://rielyrufino.com" target="_blank">rielyrufino.com</a>&rdquo;</p>
+            </div>
         </div>
 
         <footer class="footer">
